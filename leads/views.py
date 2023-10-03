@@ -1,6 +1,7 @@
 import logging
 import datetime
 from django import contrib
+from django.core.paginator import Paginator
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.http.response import JsonResponse
@@ -22,10 +23,6 @@ from .forms import (
 
 
 logger = logging.getLogger(__name__)
-
-
-# CRUD+L - Create, Retrieve, Update and Delete + List
-
 
 class SignupView(generic.CreateView):
     template_name = "registration/signup.html"
@@ -86,44 +83,46 @@ def landing_page(request):
 class LeadListView(LoginRequiredMixin, generic.ListView):
     template_name = "leads/lead_list.html"
     context_object_name = "leads"
+    paginate_by = 20
 
     def get_queryset(self):
         user = self.request.user
-        # initial queryset of leads for the entire organisation
+
+        # Si el usuario es un organizador
         if user.is_organisor:
             queryset = Lead.objects.filter(
-                organisation=user.userprofile, 
+                organisation=user.userprofile,
                 agent__isnull=False
-            )
+            ).order_by('-created_at')  # Aplicar orden por 'created_at' en orden descendente
         else:
+            # Si el usuario es un agente
             queryset = Lead.objects.filter(
-                organisation=user.agent.organisation, 
+                organisation=user.agent.organisation,
                 agent__isnull=False
-            )
-            # filter for the agent that is logged in
-            queryset = queryset.filter(agent__user=user)
+            ).filter(agent__user=user).order_by('-created_at')  # Aplicar orden por 'created_at' en orden descendente
+       
         return queryset
 
     def get_context_data(self, **kwargs):
         context = super(LeadListView, self).get_context_data(**kwargs)
         user = self.request.user
+
+        # Si el usuario es un organizador
         if user.is_organisor:
             queryset = Lead.objects.filter(
-                organisation=user.userprofile, 
+                organisation=user.userprofile,
                 agent__isnull=True
             )
             context.update({
                 "unassigned_leads": queryset
             })
+            print("Total leads:", queryset.count())
+        
         return context
 
 
-def lead_list(request):
-    leads = Lead.objects.all()
-    context = {
-        "leads": leads
-    }
-    return render(request, "leads/lead_list.html", context)
+
+
 
 
 class LeadDetailView(LoginRequiredMixin, generic.DetailView):

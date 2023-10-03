@@ -92,6 +92,34 @@
             </div>
             </div>
         </div>
+
+        <!-- Contenedor del paginador -->
+<div class="mt-4 text-center">
+    <!-- Paginación -->
+    <div>
+        {% if page_obj.has_previous %}
+            <a href="?page=1" class="px-4 inline-flex text-sm leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">Primero</a>
+            <a href="?page={{ page_obj.previous_page_number }}" class="px-4 inline-flex text-sm leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">Anterior</a>
+        {% else %}
+            <span class="px-4 inline-flex text-sm leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">Primero</span>
+            <span class="px-4 inline-flex text-sm leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">Anterior</span>
+        {% endif %}
+    
+        <span class="mx-2">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
+    
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="px-4 inline-flex text-sm leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">Siguiente</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}" class="px-4 inline-flex text-sm leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">Último</a>
+        {% else %}
+            <span class="px-4 inline-flex text-sm leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">Siguiente</span>
+            <span class="px-4 inline-flex text-sm leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">Último</span>
+        {% endif %}
+    </div>
+</div>
+
+
+
+
         {% if unassigned_leads.exists %}
             <div class="mt-5 flex flex-wrap -m-4">
                 <div class="p-4 w-full">
@@ -126,4 +154,8 @@
         {% endif %}
     </div>
 </section>
+
+
+
+
 {% endblock content %}

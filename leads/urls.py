@@ -26,4 +26,7 @@ urlpatterns = [
     path('categories/<int:pk>/update/', CategoryUpdateView.as_view(), name='category-update'),
     path('categories/<int:pk>/delete/', CategoryDeleteView.as_view(), name='category-delete'),
     path('create-category/', CategoryCreateView.as_view(), name='category-create'),
+    path('page/<int:page>/', LeadListView.as_view(), name='lead-list-paginated'),
+
+
 ]

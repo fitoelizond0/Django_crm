@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 352.16 394.99">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-6 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-3 {
+        fill: url(#Degradado_sin_nombre_2);
+      }
+
+      .cls-4 {
+        fill: url(#Degradado_sin_nombre);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" x="-232.71" y="-267.83" width="1000" height="1000"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <path class="cls-2" d="m183.75,175.06l37.96,21.92-37.96,21.92-37.96-21.92-50.62,29.23,37.96,21.92-74.13,42.8v-43.84l-40.73,23.52c-1.92,1.11-3.11,3.16-3.11,5.38v95.05c0,6.38,6.9,10.36,12.43,7.17l31.41-18.14,134.02-77.38,50.62-29.23,37.96-21.92,47.46-27.4c5.52-3.19,5.52-11.16,0-14.35l-47.46-27.4-37.96-21.92-59.88,34.57v.02Z"/>
+    </clipPath>
+    <linearGradient id="Degradado_sin_nombre" data-name="Degradado sin nombre" x1="2732.09" y1="-417.14" x2="2733.09" y2="-417.14" gradientTransform="translate(-99458.11 -652412.55) rotate(90) scale(238.85)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6eb53f"/>
+      <stop offset="0" stop-color="#6eb53f"/>
+      <stop offset="1" stop-color="#277891"/>
+    </linearGradient>
+    <clipPath id="clippath-2">
+      <path class="cls-2" d="m15.16,22.92v249.47l43.84-25.31v-41.76l36.17,20.88,50.62-29.23-50.62-29.23-36.17-20.88v-43.84l74.13,42.8,50.62,29.22,59.88-34.57-50.62-29.23L58.99,33.86,27.58,15.72c-1.33-.77-2.75-1.12-4.13-1.12-4.33,0-8.3,3.46-8.3,8.3"/>
+    </clipPath>
+    <linearGradient id="Degradado_sin_nombre_2" data-name="Degradado sin nombre 2" x1="2732.39" y1="-418.06" x2="2733.39" y2="-418.06" gradientTransform="translate(-107634.05 -704313.75) rotate(90) scale(257.77)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6eb53f"/>
+      <stop offset="0" stop-color="#6eb53f"/>
+      <stop offset="1" stop-color="#277891"/>
+    </linearGradient>
+  </defs>
+  <g class="cls-1">
+    <g>
+      <g class="cls-5">
+        <rect class="cls-4" x="15.16" y="140.49" width="319.42" height="240.91"/>
+      </g>
+      <g class="cls-6">
+        <rect class="cls-3" x="15.16" y="14.63" width="228.47" height="257.77"/>
+      </g>
+    </g>
+  </g>
+</svg>
